@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:30:28 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/16 21:44:17 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/16 21:56:32 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,10 @@ void	ClapTrap::takeDomage(unsigned int amount)
 			this->_hit_points -= amount;
 		std::cout << this->_hit_points << std::endl;
 		if (this->_hit_points == 0)
-			std::cout << "you killed " << this->_name << std::endl;
+			std::cout << "You killed " << this->_name << std::endl;
 	}
 	else
-		std::cout << "you're so cruel, you won't leave his corpse alone."
+		std::cout << "You're so cruel, you won't leave his corpse alone"
 			<< std::endl;
 	return ;
 }
