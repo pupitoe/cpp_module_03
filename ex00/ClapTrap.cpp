@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:30:28 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/16 19:21:39 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/16 21:44:17 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,57 @@ unsigned int	ClapTrap::get_hit( void ) const
 
 void	ClapTrap::attack(const std::string& target)
 {
-	(void)target;
+	if (this->print_no_point())
+	{
+		this->_energy_points--;
+		std::cout << "ClapTrap " << this->_name << " attacks " << target
+			<< ", causing " << this->_attack_domage << " points of domage"
+			<< std::endl;
+	}
 	return ;
 }
 
 void	ClapTrap::takeDomage(unsigned int amount)
 {
-	(void)amount;
+	if (this->_hit_points)
+	{
+		std::cout << this->_name << " has taken domage, going frome "
+			<< this->_hit_points << " to ";
+		if (amount > this->_hit_points)
+			this->_hit_points = 0;
+		else
+			this->_hit_points -= amount;
+		std::cout << this->_hit_points << std::endl;
+		if (this->_hit_points == 0)
+			std::cout << "you killed " << this->_name << std::endl;
+	}
+	else
+		std::cout << "you're so cruel, you won't leave his corpse alone."
+			<< std::endl;
 	return ;
 }
+
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	(void)amount;
+	if (this->print_no_point())
+	{
+		this->_energy_points--;
+		std::cout << this->_name << ": repaired of " << amount << "hps"
+			<< std::endl;
+	}
 	return ;
+}
+
+bool	ClapTrap::print_no_point( void ) const
+{
+	bool	status;
+
+	status = false;
+	if (this->_energy_points == 0)
+		std::cout << "OH NO " << this->_name << " have energy" << std::endl;
+	else if (this->_hit_points == 0)
+		std::cout << "OH NO " << this->_name << " is dead :(" << std::endl;
+	else
+		status = true;
+	return (status);
 }

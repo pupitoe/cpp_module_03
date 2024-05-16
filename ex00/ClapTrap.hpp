@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:30:23 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/16 19:09:24 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/16 21:31:26 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class	ClapTrap
 		unsigned int	_hit_points;
 		unsigned int	_energy_points;
 		unsigned int	_attack_domage;
+		bool			print_no_point( void ) const;
 
 	public:
 		ClapTrap( std::string const name );
@@ -33,7 +34,7 @@ class	ClapTrap
 		void	takeDomage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 
-		std::string	get_name( void ) const;
+		std::string		get_name( void ) const;
 		unsigned int	get_hit( void ) const;
 		unsigned int	get_energy( void ) const;
 		unsigned int	get_attack( void ) const;
