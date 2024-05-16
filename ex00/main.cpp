@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:31:33 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/16 21:54:22 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/16 21:58:39 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	main(void)
 {
 	ClapTrap	tom = std::string("super tom");
 	ClapTrap	flo("super gaitan");
+	std::string buffer = "krissssss";
 	
-
 	flo.attack(tom.get_name());
 	std::cout << std::endl;
 	tom.takeDomage(5);
@@ -28,8 +28,6 @@ int	main(void)
 	std::cout << std::endl;
 	tom.beRepaired(10);
 	std::cout << std::endl;
-
-	std::string buffer = "krissssss";
 	for (int i = 0; i < 10; i++)
 	{
 		flo.attack(buffer);
