@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:30:28 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/16 21:56:32 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:05:08 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->print_no_point())
 	{
 		this->_energy_points--;
+		this->_hit_points += amount;
 		std::cout << this->_name << ": repaired of " << amount << "hps"
 			<< std::endl;
 	}
@@ -112,10 +113,11 @@ bool	ClapTrap::print_no_point( void ) const
 	bool	status;
 
 	status = false;
-	if (this->_energy_points == 0)
-		std::cout << "OH NO " << this->_name << " have energy" << std::endl;
-	else if (this->_hit_points == 0)
+	if (this->_hit_points == 0)
 		std::cout << "OH NO " << this->_name << " is dead :(" << std::endl;
+	else if (this->_energy_points == 0)
+		std::cout << "OH NO " << this->_name << " do not have energy"
+			<< std::endl;
 	else
 		status = true;
 	return (status);

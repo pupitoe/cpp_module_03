@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:31:33 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/16 23:27:32 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:01:24 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,8 @@ int	main(void)
 	}
 	tomixos.attack("politocilo");
 	tomixos.guardGate();
+	tomixos.attack("gaitan");
+	tomixos.beRepaired(10);
+	tomixos.takeDomage(100000000);
 	return (0);
 }

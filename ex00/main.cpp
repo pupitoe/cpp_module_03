@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:31:33 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/16 22:47:43 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:01:05 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,8 @@ int	main(void)
 		buffer += tom.get_name()[i % tom.get_name().length()];
 	}
 	copy.attack("tom tom");
+	copy.beRepaired(1000);
+	copy.takeDomage(10000);
+	copy.attack("tom");
 	return (0);
 }
