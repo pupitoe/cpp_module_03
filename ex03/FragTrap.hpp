@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 22:01:59 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/17 15:59:57 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/19 19:58:42 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class	FragTrap: public ClapTrap
+class	FragTrap: virtual public ClapTrap
 {
 	public:
 		FragTrap( std::string name );

@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:30:28 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/17 14:04:52 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/19 20:38:37 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap( std::string const name ): _name(name)
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->_attack_domage = 0;
-	this->_energy_points = 10;
+	this->ClapTrap::_energy_points = 10;
 	this->_hit_points = 10;
 	return ;
 }
@@ -37,10 +37,10 @@ ClapTrap::ClapTrap( ClapTrap const &cpy)
 ClapTrap& ClapTrap::operator=(ClapTrap const& cpy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_name = cpy.get_name();
-	this->_attack_domage = cpy.get_attack();
-	this->_energy_points = cpy.get_energy();
-	this->_hit_points = cpy.get_hit();
+	this->_name = cpy._name;
+	this->_attack_domage = cpy._attack_domage;
+	this->ClapTrap::_energy_points = cpy._energy_points;
+	this->_hit_points = cpy._hit_points;
 	return (*this);
 }
 
@@ -56,7 +56,7 @@ unsigned int	ClapTrap::get_attack( void ) const
 
 unsigned int	ClapTrap::get_energy( void ) const
 {
-	return (this->_energy_points);
+	return (this->ClapTrap::_energy_points);
 }
 
 unsigned int	ClapTrap::get_hit( void ) const
@@ -100,7 +100,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->print_no_point())
 	{
-		this->_energy_points--;
+		this->ClapTrap::_energy_points--;
 		this->_hit_points += amount;
 		std::cout << this->_name << ": repaired of " << amount << "hps"
 			<< std::endl;
@@ -115,7 +115,7 @@ bool	ClapTrap::print_no_point( void ) const
 	status = false;
 	if (this->_hit_points == 0)
 		std::cout << "OH NO " << this->_name << " is dead :(" << std::endl;
-	else if (this->_energy_points == 0)
+	else if (this->ClapTrap::_energy_points == 0)
 		std::cout << "OH NO " << this->_name << " do not have energy"
 			<< std::endl;
 	else
@@ -131,7 +131,7 @@ void	ClapTrap::set_attack( unsigned int val )
 
 void	ClapTrap::set_energy ( unsigned int val )
 {
-	this->_energy_points = val;
+	this->ClapTrap::_energy_points = val;
 	return ;
 }
 

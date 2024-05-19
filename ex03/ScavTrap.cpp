@@ -17,7 +17,7 @@ ScavTrap::ScavTrap( std::string name ): ClapTrap(name)
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 	this->_hit_points = 100;
-	this->_energy_points = 50;
+	this->ClapTrap::_energy_points = 50;
 	this->_attack_domage = 20;
 	return ;
 }
@@ -46,7 +46,7 @@ void	ScavTrap::attack(const std::string& target)
 {
 	if (this->print_no_point())
 	{
-		this->_energy_points = this->_energy_points- 1;
+		this->ClapTrap::_energy_points -= 1;
 		std::cout << "ScavTrap " << this->_name
 			<< " attacks with super DAB inside " << target
 			<< ", causing " << this->_attack_domage << " points of domage"

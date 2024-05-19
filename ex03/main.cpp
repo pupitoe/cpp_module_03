@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:31:33 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/17 18:03:53 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/19 20:40:11 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,18 @@
 int	main(void)
 {
 	DiamondTrap	tom = std::string("super tom");
-	DiamondTrap	flo("super gaitan");
+	//FragTrap	flo("super gaitan");
 
-	flo.attack("kiwi");
-	tom.attack("aa");
-	//DiamondTrap	popo = flo;	
+	tom.attack("tom");
+	tom.attack("tom");
+	std::cout << tom.get_energy() << std::endl;
+	tom.takeDomage(1);
+	tom.beRepaired(1);
+	std::cout << tom.get_energy() << std::endl;
+
+	//flo.attack("kiwi");
+	//tom.attack("aa");
+	//FragTrap	popo = flo;	
 	//std::string buffer = "akira";
 	
 	//flo.attack(tom.get_name());
