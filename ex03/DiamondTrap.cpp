@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:06:14 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/20 13:46:04 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:38:41 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ DiamondTrap::DiamondTrap( std::string name ): ClapTrap(name),
 	this->_hit_points = this->FragTrap::__vhit_points;
 	this->_energy_points = this->ScavTrap::__venergy_points;
 	this->_attack_domage = this->FragTrap::__vattack_domage;
+	this->DiamondTrap::_name = this->ClapTrap::_name;
+	this->ClapTrap::_name += "_clap_name";
 	return ;
 }
 
@@ -41,4 +43,14 @@ DiamondTrap&	DiamondTrap::operator=( DiamondTrap const& cpy)
 	std::cout << "DiamondTrap copy asignement operator called" << std::endl;
 	(void)cpy;
 	return (*this);
+}
+
+void	DiamondTrap::whoAmI( void )
+{
+	if (this->print_no_point())
+	{
+		std::cout << "My name is \"" << this->DiamondTrap::_name
+			<< "\" my ClapTrap name is \"" << this->ClapTrap::_name
+			<< "\"" << std::endl;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:31:33 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/19 20:40:11 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:30:18 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(void)
 	std::cout << tom.get_energy() << std::endl;
 	tom.takeDomage(1);
 	tom.beRepaired(1);
+	tom.whoAmI();
 	std::cout << tom.get_energy() << std::endl;
 
 	//flo.attack("kiwi");
