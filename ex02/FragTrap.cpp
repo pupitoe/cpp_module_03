@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 14:10:40 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/17 14:27:07 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:48:21 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ FragTrap::FragTrap( FragTrap const& cpy ): ClapTrap(cpy)
 FragTrap& FragTrap::operator=( FragTrap const& cpy)
 {
 	std::cout << "FragTrap copy asignement constructor called" << std::endl;
-	(void)cpy;
+	this->_name = cpy._name;
+	this->_attack_domage = cpy._attack_domage;
+	this->_energy_points = cpy._energy_points;
+	this->_hit_points = cpy._hit_points;
 	return *this;
 }
 

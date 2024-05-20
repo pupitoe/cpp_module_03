@@ -37,7 +37,10 @@ ScavTrap::ScavTrap( ScavTrap const& cpy ): ClapTrap(cpy)
 ScavTrap& ScavTrap::operator=( ScavTrap const& cpy)
 {
 	std::cout << "ScavTrap copy asignement constructor called" << std::endl;
-	(void)cpy;
+	this->_name = cpy._name;
+	this->_attack_domage = cpy._attack_domage;
+	this->_energy_points = cpy._energy_points;
+	this->_hit_points = cpy._hit_points;
 	return *this;
 }
 
