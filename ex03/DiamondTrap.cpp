@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:06:14 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/20 14:38:41 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:59:00 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ DiamondTrap::DiamondTrap( DiamondTrap const& cpy ): ClapTrap(cpy),
 DiamondTrap&	DiamondTrap::operator=( DiamondTrap const& cpy)
 {
 	std::cout << "DiamondTrap copy asignement operator called" << std::endl;
-	(void)cpy;
+	this->DiamondTrap::_name = cpy.DiamondTrap::_name;
+	this->ClapTrap::_name = cpy.ClapTrap::_name;
 	return (*this);
 }
 

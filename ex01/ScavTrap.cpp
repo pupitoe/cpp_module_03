@@ -58,6 +58,6 @@ void	ScavTrap::attack(const std::string& target)
 void	ScavTrap::guardGate(void)
 {
 	if (this->print_no_point())
-		std::cout << "Is now in Gate Keeper mode" << std::endl;
+		std::cout << this->_name << "is now in Gate Keeper mode" << std::endl;
 	return ;
 }
