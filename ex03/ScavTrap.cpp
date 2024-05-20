@@ -16,9 +16,9 @@
 ScavTrap::ScavTrap( std::string name ): ClapTrap(name)
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-	this->_hit_points = 100;
-	this->ClapTrap::_energy_points = 50;
-	this->_attack_domage = 20;
+	this->ClapTrap::_hit_points = this->__vhit_points;
+	this->ClapTrap::_energy_points = this->__venergy_points;
+	this->ClapTrap::_attack_domage = this->_attack_domage;
 	return ;
 }
 

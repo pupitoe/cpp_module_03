@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 22:01:59 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/19 19:58:37 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:35:18 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 // : public is heritence of ClapTrap
 class	ScavTrap: virtual public ClapTrap
 {
+	protected:
+		static const int	__vhit_points = 100;
+		static const int	__venergy_points = 50;
+		static const int	__vattack_domage = 20;
+
 	public:
 		ScavTrap( std::string name );
 		~ScavTrap( void );
