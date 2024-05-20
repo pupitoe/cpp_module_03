@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 14:10:40 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/20 13:33:43 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:49:51 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 FragTrap::FragTrap( std::string name ): ClapTrap(name)
 {
 	std::cout << "FragTrap default constructor called" << std::endl;
-	this->ClapTrap::_hit_points = this->__vhit_points;
-	this->ClapTrap::_energy_points = this->__venergy_points;
-	this->ClapTrap::_attack_domage = this->_attack_domage;
+	this->_hit_points = this->__vhit_points;
+	this->_energy_points = this->__venergy_points;
+	this->_attack_domage = this->_attack_domage;
 	return ;
 }
 
@@ -45,7 +45,7 @@ void	FragTrap::attack(const std::string& target)
 {
 	if (this->print_no_point())
 	{
-		this->ClapTrap::_energy_points -= 1;
+		this->_energy_points -= 1;
 		std::cout << "FragTrap " << this->_name
 			<< " attacks with \"element de l'infini\" " << target
 			<< ", causing " << this->_attack_domage << " points of domage"

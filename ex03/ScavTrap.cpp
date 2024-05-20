@@ -12,13 +12,12 @@
 
 #include "ScavTrap.hpp"
 
-// : ClapTrap() is explisite constructor :)
 ScavTrap::ScavTrap( std::string name ): ClapTrap(name)
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-	this->ClapTrap::_hit_points = this->__vhit_points;
-	this->ClapTrap::_energy_points = this->__venergy_points;
-	this->ClapTrap::_attack_domage = this->_attack_domage;
+	this->_hit_points = this->__vhit_points;
+	this->_energy_points = this->__venergy_points;
+	this->_attack_domage = this->_attack_domage;
 	return ;
 }
 
@@ -46,7 +45,7 @@ void	ScavTrap::attack(const std::string& target)
 {
 	if (this->print_no_point())
 	{
-		this->ClapTrap::_energy_points -= 1;
+		this->_energy_points -= 1;
 		std::cout << "ScavTrap " << this->_name
 			<< " attacks with super DAB inside " << target
 			<< ", causing " << this->_attack_domage << " points of domage"

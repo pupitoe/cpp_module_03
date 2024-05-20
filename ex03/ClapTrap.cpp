@@ -6,7 +6,7 @@
 /*   By: tlassere <tlassere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:30:28 by tlassere          #+#    #+#             */
-/*   Updated: 2024/05/20 13:41:27 by tlassere         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:46:42 by tlassere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap( std::string const name ): _name(name)
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->_attack_domage = 0;
-	this->ClapTrap::_energy_points = 10;
+	this->_energy_points = 10;
 	this->_hit_points = 10;
 	return ;
 }
@@ -39,7 +39,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& cpy)
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->_name = cpy._name;
 	this->_attack_domage = cpy._attack_domage;
-	this->ClapTrap::_energy_points = cpy._energy_points;
+	this->_energy_points = cpy._energy_points;
 	this->_hit_points = cpy._hit_points;
 	return (*this);
 }
@@ -56,7 +56,7 @@ unsigned int	ClapTrap::get_attack( void ) const
 
 unsigned int	ClapTrap::get_energy( void ) const
 {
-	return (this->ClapTrap::_energy_points);
+	return (this->_energy_points);
 }
 
 unsigned int	ClapTrap::get_hit( void ) const
@@ -100,7 +100,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->print_no_point())
 	{
-		this->ClapTrap::_energy_points--;
+		this->_energy_points--;
 		this->_hit_points += amount;
 		std::cout << this->_name << ": repaired of " << amount << "hps"
 			<< std::endl;
@@ -115,7 +115,7 @@ bool	ClapTrap::print_no_point( void ) const
 	status = false;
 	if (this->_hit_points == 0)
 		std::cout << "OH NO " << this->_name << " is dead :(" << std::endl;
-	else if (this->ClapTrap::_energy_points == 0)
+	else if (this->_energy_points == 0)
 		std::cout << "OH NO " << this->_name << " do not have energy"
 			<< std::endl;
 	else
